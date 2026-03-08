@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Event Selection</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+       <link rel="stylesheet" href="event-style.css">
+</head>
+
+<body>
+    <div class="booking-container">
+    <h2>🎬 Book Your Movie Tickets</h2>
+ 
+    <div class="form-group">
+      <label for="movie">Select Movie:</label>
+      <select id="movie">
+        <option value="Avengers">Avengers</option>
+        <option value="Frozen">Frozen</option>
+        <option value="Minions">Minions</option>
+      </select>
+    </div>
+ 
+    <div class="form-group">
+      <label for="date"> Select the show date: </label>
+      <input type="date" id="date">
+      <label for="time">Select Show Time:</label>
+      <select id="time">
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="1:00 PM">1:00 PM</option>
+        <option value="4:00 PM">4:00 PM</option>
+        <option value="7:00 PM">7:00 PM</option>
+      </select>
+    </div>
+ 
+    <!-- Seat Booking -->
+    <div id="seat-container"></div>
+ 
+    <button class="btn-book" onclick="showBill()">🎟️ Book Now</button>
+  </div>
+ 
+  <!-- Popup Class 19-->
+  <div id="overlay"></div>
+  <div id="bill-popup">
+    <h3>🎫 Ticket Summary</h3>
+    <p id="bill-details"></p>
+    <button class="btn-confirm" onclick="makePayment()">💳 Proceed to Pay</button>
+    <button class="btn-close" onclick="closePopup()">❌ Close</button>
+  </div>
+
+    <script src="event-script.js"></script>
+</body>
+</html>
+
